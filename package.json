@@ -21,9 +21,14 @@
     "test:watch": "jest --watch --notify --notifyMode=change --coverage"
   },
   "dependencies": {
-    "nock": "^10.0.0",
+    "@types/atob": "^2.1.1",
+    "@types/marked": "^0.6.0",
     "@types/nock": "^9.3.0",
-    "probot": "^7.2.0"
+    "atob": "^2.1.2",
+    "marked": "^0.6.0",
+    "nock": "^10.0.0",
+    "probot": "^7.2.0",
+    "proofreader": "github:anthonyjclark/proofreader"
   },
   "devDependencies": {
     "@types/jest": "^23.1.5",

@@ -1,3 +1,10 @@
+
+node_modules/.bin/probot receive -e pull_request -p test/fixtures/pull_request.opened.json ./lib/index.js
+
+Things to do:
+- change to submitting a review
+- break suggestions into individual comments and tag line numbers
+
 # Editor
 
 > A GitHub App built with [Probot](https://github.com/probot/probot) that An app for checking grammar and spelling in GitHub pull requests.
