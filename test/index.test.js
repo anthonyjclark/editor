@@ -1,21 +1,18 @@
-// You can import your modules
-// import index from '../src/index'
-
-import nock from 'nock'
+const nock = require('nock')
 // Requiring our app implementation
-import myProbotApp from '../src'
-import { Probot } from 'probot'
+const myProbotApp = require('..')
+const { Probot } = require('probot')
 // Requiring our fixtures
-import payload from './fixtures/issues.opened.json'
+const payload = require('./fixtures/issues.opened')
 const issueCreatedBody = { body: 'Thanks for opening this issue!' }
 
 nock.disableNetConnect()
 
 describe('My Probot app', () => {
-  let probot: any
+  let probot
 
   beforeEach(() => {
-    probot = new Probot({ id: 123, cert: 'test' })
+    probot = new Probot({})
     // Load our app into probot
     const app = probot.load(myProbotApp)
 
@@ -23,7 +20,7 @@ describe('My Probot app', () => {
     app.app = () => 'test'
   })
 
-  test('creates a comment when an issue is opened', async (done) => {
+  test('creates a comment when an issue is opened', async () => {
     // Test that we correctly return a test token
     nock('https://api.github.com')
       .post('/app/installations/2/access_tokens')
@@ -31,8 +28,8 @@ describe('My Probot app', () => {
 
     // Test that a comment is posted
     nock('https://api.github.com')
-      .post('/repos/hiimbex/testing-things/issues/1/comments', (body: any) => {
-        done(expect(body).toMatchObject(issueCreatedBody))
+      .post('/repos/hiimbex/testing-things/issues/1/comments', (body) => {
+        expect(body).toMatchObject(issueCreatedBody)
         return true
       })
       .reply(200)
@@ -44,9 +41,6 @@ describe('My Probot app', () => {
 
 // For more information about testing with Jest see:
 // https://facebook.github.io/jest/
-
-// For more information about using TypeScript in your tests, Jest recommends:
-// https://github.com/kulshekhar/ts-jest
 
 // For more information about testing with Nock see:
 // https://github.com/nock/nock

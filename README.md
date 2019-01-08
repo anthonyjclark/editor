@@ -15,9 +15,6 @@ Things to do:
 # Install dependencies
 npm install
 
-# Run typescript
-npm run build
-
 # Run the bot
 npm start
 ```
