@@ -1,5 +1,9 @@
 
-node_modules/.bin/probot receive -e pull_request -p test/fixtures/pull_request.opened.json ./lib/index.js
+Glitch is not persistent, and Zeit now does not have the tool-chain needed to install nodehun. So, I will need to manually run the following command after each pull request (it will require an updated fixture...):
+
+```bash
+node_modules/.bin/probot receive -e pull_request -p test/fixtures/pull_request.synchronize.json ./app.js
+```
 
 Things to do:
 - change to submitting a review

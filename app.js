@@ -1,6 +1,6 @@
 const marked = require('marked')
 const atob = require('atob')
-const Proofreader = require('proofreader')
+const Proofreader = require('@anthonyjclark/proofreader')
 
 function nthIndex (str, pat, n) {
   const L = str.length
