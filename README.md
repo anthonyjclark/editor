@@ -11,7 +11,7 @@ Things to do:
 
 # Editor
 
-> A GitHub App built with [Probot](https://github.com/probot/probot) that An app for checking grammar and spelling in GitHub pull requests.
+> A GitHub App built with [Probot](https://github.com/probot/probot) that checks for grammar and spelling errors in GitHub pull requests.
 
 ## Setup
 
